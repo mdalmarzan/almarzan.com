@@ -1,0 +1,153 @@
+@import "tailwindcss";
+@import "daisyui/daisyui.css";
+
+/* Hide scrollbar but keep scrolling */
+
+html,
+body {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  overflow: hidden;
+  height: 100vh;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+code {
+  font-family: "JetBrains Mono", monospace;
+}
+
+button {
+  cursor: pointer;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 5s linear infinite;
+}
+
+/* Navbar entrance animation */
+@keyframes navbar-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-enter {
+  animation: navbar-enter 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+
+
+/* ========== Hero Animations ========== */
+
+/* Profile Image Entrance */
+@keyframes hero-image-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-image-enter {
+  animation: hero-image-enter 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Cards Entrance */
+@keyframes hero-card-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-card-enter {
+  animation: hero-card-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+.hero-card-enter-delay {
+  animation: hero-card-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+
+.hero-card-enter-delay-2 {
+  animation: hero-card-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both;
+}
+
+/* Music Disc Spin */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 8s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+
+
+
+/* Space / Dock Entrance Animation */
+@keyframes space-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.space-enter {
+  animation: space-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+}
