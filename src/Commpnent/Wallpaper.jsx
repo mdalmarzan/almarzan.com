@@ -7,14 +7,10 @@ const Wallpaper = ({ open, onClose }) => {
   // DEFAULT WALLPAPERS
   // ==========================================
   const DefaultWallpaper = [
-    { source: "/Wallpaper/img10.mp4", id: "1", type: "video" },
-    { source: "/Wallpaper/img7.mp4", id: "2", type: "video" },
+    { source: "/Wallpaper/img7.mp4", id: "1", type: "video" },
+    { source: "/Wallpaper/img10.mp4", id: "2", type: "video" },
     { source: "/Wallpaper/img3.mp4", id: "3", type: "video" },
-  
-   
     { source: "/Wallpaper/img2.mp4", id: "6", type: "video" },
- 
-  
     { source: "/Wallpaper/img6.mp4", id: "9", type: "video" },
     { source: "/Wallpaper/img5.mp4", id: "9", type: "video" },
   ];
