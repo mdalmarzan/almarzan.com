@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import About from "./Commpnent/About";
 import Footer from "./Commpnent/Footer";
 import Hero from "./Commpnent/Hero";
@@ -8,6 +9,7 @@ import Space from "./Commpnent/Space";
 import Experience from "./Commpnent/Experience";
 import Skill from "./Commpnent/Skill";
 import Contact from "./Commpnent/Contact";
+
 import CursorGrid from "./CursorGrid";
 import SplashScreen from "./Commpnent/MainPage";
 
@@ -21,15 +23,18 @@ function App() {
   const [s, sets] = useState(false);
   const [c, setc] = useState(false);
 
-  // Show Splash Screen first
+  // Splash Screen
   if (showSplash) {
-    return <SplashScreen onClick={() => setShowSplash(false)} />;
+    return (
+      <SplashScreen
+        onClick={() => setShowSplash(false)}
+      />
+    );
   }
 
-  // After click → normal app (your original content + MainPage if you want)
   return (
     <>
-      {/* Cursor Grid - full screen, doesn't affect layout */}
+      {/* Cursor Grid */}
       <CursorGrid
         cellSize={70}
         color="#D946EF"
@@ -46,30 +51,113 @@ function App() {
         pulseSpeed={600}
       />
 
-      {/* Actual page content */}
+      {/* Main Desktop */}
       <div className="relative min-h-screen w-full">
-        <Navbar onAboutClick={() => setAboutOpen(true)} />
 
+        {/* Navbar */}
+        <Navbar
+          onAboutClick={() => setAboutOpen(true)}
+        />
+
+        {/* Hero */}
         <Hero />
 
-        {/* You can put MainPage here if you want the fancy text effects */}
-        {/* <MainPage /> */}
+        {/* =====================================
+            BOTTOM DESKTOP AREA
+        ===================================== */}
+        <div
+          className="
+            absolute
+            left-0
+            right-0
+            bottom-0
+            w-full
+            px-5
+            pb-4
+          "
+        >
+          <div
+            className="
+              flex
+              items-end
+              justify-between
+              gap-4
+              w-full
+            "
+          >
 
-        <div className="flex mt-3 ml-10 gap-3 pb-4 justify-between">
-          <div className="flex mt-3 gap-3 pb-4">
-            <About open={aboutOpen} onClose={() => setAboutOpen(false)} />
-            <Footer open={pro} onClose={() => setpro(false)} />
-            <Resume open={res} onClose={() => setres(false)} />
-          </div>
+            {/* LEFT WINDOWS */}
+            <div
+              className="
+                flex
+                items-end
+                gap-3
+                min-w-0
+                max-w-[42%]
+                overflow-x-auto
+              "
+            >
+              <About
+                open={aboutOpen}
+                onClose={() => setAboutOpen(false)}
+              />
 
-          <Space />
+              <Footer
+                open={pro}
+                onClose={() => setpro(false)}
+              />
 
-          <div className="flex mt-3 mr-7 gap-3 pb-4">
-            <Experience open={ex} onClose={() => setex(false)} />
-            <Skill open={s} onClose={() => sets(false)} />
-            <Contact open={c} onClose={() => setc(false)} />
+              <Resume
+                open={res}
+                onClose={() => setres(false)}
+              />
+            </div>
+
+            {/* =================================
+                SPACE / MAC DOCK
+            ================================= */}
+            <div
+              className="
+                flex-shrink-0
+                flex
+                items-end
+                justify-center
+              "
+            >
+              <Space />
+            </div>
+
+            {/* RIGHT WINDOWS */}
+            <div
+              className="
+                flex
+                items-end
+                justify-end
+                gap-3
+                min-w-0
+                max-w-[42%]
+                overflow-x-auto
+              "
+            >
+              <Experience
+                open={ex}
+                onClose={() => setex(false)}
+              />
+
+              <Skill
+                open={s}
+                onClose={() => sets(false)}
+              />
+
+              <Contact
+                open={c}
+                onClose={() => setc(false)}
+              />
+            </div>
+
           </div>
         </div>
+
       </div>
     </>
   );

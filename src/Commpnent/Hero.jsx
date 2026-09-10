@@ -123,6 +123,8 @@ const Hero = () => {
             {/* Image */}
             <img
               src="/marzan2.png"
+              loading="eager"
+              fetchpriority="high"
               alt="Marzan"
               width={200}
               height={290}
