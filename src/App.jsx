@@ -12,6 +12,7 @@ import Contact from "./Commpnent/Contact";
 
 import CursorGrid from "./CursorGrid";
 import SplashScreen from "./Commpnent/MainPage";
+import FullScreen from "./Commpnent/FullScreen";
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -26,14 +27,23 @@ function App() {
   // Splash Screen
   if (showSplash) {
     return (
-      <SplashScreen
-        onClick={() => setShowSplash(false)}
-      />
+      <>
+        <FullScreen />
+
+        <SplashScreen
+          onClick={() => {
+            setShowSplash(false);
+          }}
+        />
+      </>
     );
   }
 
   return (
     <>
+      {/* Fullscreen */}
+      <FullScreen />
+
       {/* Cursor Grid */}
       <CursorGrid
         cellSize={70}
@@ -94,23 +104,28 @@ function App() {
                 gap-3
                 min-w-0
                 max-w-[42%]
-                overflow-x-auto
               "
             >
-              <About
-                open={aboutOpen}
-                onClose={() => setAboutOpen(false)}
-              />
+              <div className="flex-shrink-0">
+                <About
+                  open={aboutOpen}
+                  onClose={() => setAboutOpen(false)}
+                />
+              </div>
 
-              <Footer
-                open={pro}
-                onClose={() => setpro(false)}
-              />
+              <div className="flex-shrink-0">
+                <Footer
+                  open={pro}
+                  onClose={() => setpro(false)}
+                />
+              </div>
 
-              <Resume
-                open={res}
-                onClose={() => setres(false)}
-              />
+              <div className="flex-shrink-0">
+                <Resume
+                  open={res}
+                  onClose={() => setres(false)}
+                />
+              </div>
             </div>
 
             {/* =================================
@@ -136,28 +151,32 @@ function App() {
                 gap-3
                 min-w-0
                 max-w-[42%]
-                overflow-x-auto
               "
             >
-              <Experience
-                open={ex}
-                onClose={() => setex(false)}
-              />
+              <div className="flex-shrink-0">
+                <Experience
+                  open={ex}
+                  onClose={() => setex(false)}
+                />
+              </div>
 
-              <Skill
-                open={s}
-                onClose={() => sets(false)}
-              />
+              <div className="flex-shrink-0">
+                <Skill
+                  open={s}
+                  onClose={() => sets(false)}
+                />
+              </div>
 
-              <Contact
-                open={c}
-                onClose={() => setc(false)}
-              />
+              <div className="flex-shrink-0">
+                <Contact
+                  open={c}
+                  onClose={() => setc(false)}
+                />
+              </div>
             </div>
 
           </div>
         </div>
-
       </div>
     </>
   );

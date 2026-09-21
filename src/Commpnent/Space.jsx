@@ -39,6 +39,7 @@ const Space = () => {
 
   const iconButtonClass = `
     w-[60px] h-[60px]
+    min-w-[60px] min-h-[60px]
     flex items-center justify-center
     rounded-xl
     bg-transparent
@@ -50,6 +51,7 @@ const Space = () => {
 
   const iconClass = `
     w-[52px] h-[52px]
+    min-w-[52px] min-h-[52px]
     object-contain
     transition-all duration-300 ease-out
     group-hover:scale-[1.15]
@@ -83,29 +85,47 @@ const Space = () => {
       {/* ================= DOCK ================= */}
       <div
         className="
-          fixed bottom-4 left-1/2 -translate-x-1/2 z-50
-          flex items-center justify-center
-          gap-2 sm:gap-3
-          px-4 sm:px-5
+          fixed
+          left-1/2
+          bottom-4
+          -translate-x-1/2
+          z-[9999]
+
+          flex
+          items-center
+          justify-center
+          gap-2
+
+          px-4
           h-[84px]
-          w-auto max-w-[96vw]
+
+          w-max
+          max-w-[calc(100vw-32px)]
+
+          overflow-visible
+
           bg-black/25
           backdrop-blur-2xl
           border border-white/10
           rounded-2xl
+
           shadow-[0_10px_40px_rgba(0,0,0,0.35)]
+
           space-enter
         "
       >
         {/* Top glass highlight */}
         <div
           className="
-            absolute inset-x-6 top-0
+            absolute
+            inset-x-6
+            top-0
             h-px
             bg-gradient-to-r
             from-transparent
             via-white/30
             to-transparent
+            pointer-events-none
           "
         />
 
@@ -114,10 +134,15 @@ const Space = () => {
           <div
             key={item.name}
             className="
-              relative group
-              w-[60px] h-[60px]
-              flex items-center justify-center
+              relative
+              group
+              w-[60px]
+              h-[60px]
+              min-w-[60px]
               shrink-0
+              flex
+              items-center
+              justify-center
             "
           >
             <a
@@ -137,6 +162,7 @@ const Space = () => {
               <img
                 src={item.src}
                 alt={item.name}
+                draggable="false"
                 className={iconClass}
               />
             </a>
@@ -148,15 +174,29 @@ const Space = () => {
         ))}
 
         {/* ================= DIVIDER ================= */}
-        <div className="w-px h-10 bg-white/10 mx-1 shrink-0" />
+        <div
+          className="
+            w-px
+            min-w-px
+            h-10
+            bg-white/10
+            mx-1
+            shrink-0
+          "
+        />
 
         {/* ================= COFFEE ================= */}
         <div
           className="
-            relative group
-            w-[60px] h-[60px]
-            flex items-center justify-center
+            relative
+            group
+            w-[60px]
+            h-[60px]
+            min-w-[60px]
             shrink-0
+            flex
+            items-center
+            justify-center
           "
         >
           <button
@@ -167,6 +207,7 @@ const Space = () => {
             <img
               src="/icons8-coffee-100.png"
               alt="Coffee"
+              draggable="false"
               className={iconClass}
             />
           </button>
@@ -179,10 +220,15 @@ const Space = () => {
         {/* ================= APPLE MUSIC ================= */}
         <div
           className="
-            relative group
-            w-[60px] h-[60px]
-            flex items-center justify-center
+            relative
+            group
+            w-[60px]
+            h-[60px]
+            min-w-[60px]
             shrink-0
+            flex
+            items-center
+            justify-center
           "
         >
           <button
@@ -193,6 +239,7 @@ const Space = () => {
             <img
               src="/icons8-apple-music-48.png"
               alt="Apple Music"
+              draggable="false"
               className={iconClass}
             />
           </button>
@@ -205,10 +252,15 @@ const Space = () => {
         {/* ================= WALLPAPER ================= */}
         <div
           className="
-            relative group
-            w-[60px] h-[60px]
-            flex items-center justify-center
+            relative
+            group
+            w-[60px]
+            h-[60px]
+            min-w-[60px]
             shrink-0
+            flex
+            items-center
+            justify-center
           "
         >
           <button
@@ -219,6 +271,7 @@ const Space = () => {
             <img
               src="/icons8-wallpaper-48.png"
               alt="Wallpaper"
+              draggable="false"
               className={iconClass}
             />
           </button>
