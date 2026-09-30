@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import Coffee from "../Commpnent/Coffee";
 import Music from "./Music";
@@ -38,6 +38,7 @@ const Space = () => {
   ];
 
   const iconButtonClass = `
+    dock-icon-button
     w-[60px] h-[60px]
     min-w-[60px] min-h-[60px]
     flex items-center justify-center
@@ -50,6 +51,7 @@ const Space = () => {
   `;
 
   const iconClass = `
+    dock-icon
     w-[52px] h-[52px]
     min-w-[52px] min-h-[52px]
     object-contain
@@ -85,11 +87,12 @@ const Space = () => {
       {/* ================= DOCK ================= */}
       <div
         className="
+          dock-bar
           fixed
           left-1/2
           bottom-4
           -translate-x-1/2
-          z-[9999]
+          z-50
 
           flex
           items-center

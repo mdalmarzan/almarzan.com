@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 
 import About from "./Commpnent/About";
 import Footer from "./Commpnent/Footer";
@@ -14,8 +14,24 @@ import CursorGrid from "./CursorGrid";
 import SplashScreen from "./Commpnent/MainPage";
 import FullScreen from "./Commpnent/FullScreen";
 
+const cursorMediaQuery = window.matchMedia(
+  "(min-width: 1200px) and (hover: hover) and (pointer: fine)"
+);
+
+const subscribeToCursorMedia = (onChange) => {
+  cursorMediaQuery.addEventListener("change", onChange);
+  return () => cursorMediaQuery.removeEventListener("change", onChange);
+};
+
+const getCursorMediaSnapshot = () => cursorMediaQuery.matches;
+
 function App() {
   const [showSplash, setShowSplash] = useState(true);
+  const showCursorGrid = useSyncExternalStore(
+    subscribeToCursorMedia,
+    getCursorMediaSnapshot,
+    () => false
+  );
 
   const [aboutOpen, setAboutOpen] = useState(false);
   const [pro, setpro] = useState(false);
@@ -45,24 +61,26 @@ function App() {
       <FullScreen />
 
       {/* Cursor Grid */}
-      <CursorGrid
-        cellSize={70}
-        color="#D946EF"
-        radius={140}
-        falloff="smooth"
-        holdTime={400}
-        fadeDuration={800}
-        lineWidth={1.2}
-        maxOpacity={1}
-        fillOpacity={0}
-        gridOpacity={0}
-        cellRadius={0}
-        clickPulse
-        pulseSpeed={600}
-      />
+      {showCursorGrid && (
+        <CursorGrid
+          cellSize={70}
+          color="#D946EF"
+          radius={140}
+          falloff="smooth"
+          holdTime={400}
+          fadeDuration={800}
+          lineWidth={1.2}
+          maxOpacity={1}
+          fillOpacity={0}
+          gridOpacity={0}
+          cellRadius={0}
+          clickPulse
+          pulseSpeed={600}
+        />
+      )}
 
       {/* Main Desktop */}
-      <div className="relative min-h-screen w-full">
+      <div className="app-shell relative min-h-screen w-full">
 
         {/* Navbar */}
         <Navbar
@@ -77,6 +95,7 @@ function App() {
         ===================================== */}
         <div
           className="
+            app-controls
             absolute
             left-0
             right-0
@@ -88,6 +107,7 @@ function App() {
         >
           <div
             className="
+              app-controls-inner
               flex
               items-end
               justify-between
@@ -99,6 +119,7 @@ function App() {
             {/* LEFT WINDOWS */}
             <div
               className="
+                app-control-group
                 flex
                 items-end
                 gap-3
@@ -133,6 +154,7 @@ function App() {
             ================================= */}
             <div
               className="
+                app-dock-wrapper
                 flex-shrink-0
                 flex
                 items-end
@@ -145,6 +167,7 @@ function App() {
             {/* RIGHT WINDOWS */}
             <div
               className="
+                app-control-group
                 flex
                 items-end
                 justify-end

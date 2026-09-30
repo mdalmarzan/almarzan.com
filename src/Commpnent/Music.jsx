@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -262,15 +262,23 @@ const Music = ({ open, onClose }) => {
     if (!audioRef.current) return;
 
     audioRef.current.load();
+    setCurrentTime(0);
+    setDuration(0);
+  }, [currentIndex]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
 
     if (isPlaying) {
-      audioRef.current
-        .play()
-        .catch((error) => {
-          console.log("Audio play error:", error);
-        });
+      audio.play().catch((error) => {
+        setIsPlaying(false);
+        console.error("Audio play error:", error);
+      });
+    } else {
+      audio.pause();
     }
-  }, [currentIndex]);
+  }, [currentIndex, isPlaying]);
 
   // ==============================
   // AUDIO EVENTS
@@ -311,6 +319,7 @@ const Music = ({ open, onClose }) => {
       }}
     >
       <Box
+        className="music-window"
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
@@ -438,7 +447,7 @@ const Music = ({ open, onClose }) => {
             </button>
           </div>
 
-          <div className="absolute left-1/2 -translate-x-1/2 text-white/80 text-sm font-medium flex items-center gap-2 z-10">
+          <div id="music-modal" className="absolute left-1/2 -translate-x-1/2 text-white/80 text-sm font-medium flex items-center gap-2 z-10">
             <span className="music-title-icon">
               <FaMusic className="text-purple-300 text-xs" />
             </span>
@@ -447,12 +456,12 @@ const Music = ({ open, onClose }) => {
         </div>
 
         {!minimized && (
-          <div className="flex h-[calc(100%-62px)]">
+          <div className="music-layout flex h-[calc(100%-62px)]">
             {/* ==============================
                 SIDEBAR
             ============================== */}
 
-            <div className="w-[300px] shrink-0 h-full bg-gradient-to-b from-black/90 via-purple-950/30 to-black/95 border-r border-white/[0.08] backdrop-blur-2xl relative overflow-hidden">
+            <div className="music-sidebar w-[300px] shrink-0 h-full bg-gradient-to-b from-black/90 via-purple-950/30 to-black/95 border-r border-white/[0.08] backdrop-blur-2xl relative overflow-hidden">
               {/* Sidebar soft glow */}
               <div className="sidebar-glow" />
 
@@ -499,7 +508,7 @@ const Music = ({ open, onClose }) => {
                 MUSIC AREA
             ============================== */}
 
-            <div className="relative flex-1 min-w-0 h-full overflow-hidden bg-gradient-to-br from-black via-purple-950/20 to-blue-950/30">
+            <div className="music-area relative flex-1 min-w-0 h-full overflow-hidden bg-gradient-to-br from-black via-purple-950/20 to-blue-950/30">
               {/* GLOW */}
 
               <div className="absolute -top-32 -right-32 w-[400px] h-[400px] rounded-full bg-purple-600/10 blur-[120px] pointer-events-none glow-a" />
@@ -518,7 +527,7 @@ const Music = ({ open, onClose }) => {
 
               {/* HEADER */}
 
-              <div className="relative px-8 pt-8 header-enter">
+              <div className="music-header relative px-8 pt-8 header-enter">
                 <p className="text-xs uppercase tracking-[0.3em] text-purple-300/50 mb-3">
                   Your Library
                 </p>
@@ -534,7 +543,7 @@ const Music = ({ open, onClose }) => {
 
               {/* SONG LIST */}
 
-              <div className="relative px-8 mt-8 h-[calc(100%-260px)] overflow-y-auto song-list-scroll">
+              <div className="music-song-list relative px-8 mt-8 h-[calc(100%-260px)] overflow-y-auto song-list-scroll">
                 <div className="grid grid-cols-[55px_minmax(0,1fr)_100px] px-4 pb-3 border-b border-white/[0.06] text-[10px] uppercase tracking-[0.2em] text-white/25">
                   <span>#</span>
                   <span>Song</span>
@@ -622,7 +631,7 @@ const Music = ({ open, onClose }) => {
                   PLAYER
               ============================== */}
 
-              <div className="absolute bottom-0 left-0 right-0 h-[150px] bg-black/70 backdrop-blur-2xl border-t border-white/[0.08] px-8 player-bar">
+              <div className="music-player-bar absolute bottom-0 left-0 right-0 h-[150px] bg-black/70 backdrop-blur-2xl border-t border-white/[0.08] px-8 player-bar">
                 {/* Player top line */}
                 <div className="player-top-line" />
 
@@ -658,7 +667,7 @@ const Music = ({ open, onClose }) => {
                 <div className="flex items-center justify-between mt-4 relative z-10">
                   {/* SONG */}
 
-                  <div className="flex items-center gap-3 w-[280px] min-w-0">
+                  <div className="music-player-track flex items-center gap-3 w-[280px] min-w-0">
                     <div
                       className={`w-11 h-11 shrink-0 rounded-xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center shadow-[0_0_25px_rgba(139,92,246,0.3)] album-art ${
                         isPlaying ? "album-spinning" : ""
@@ -681,7 +690,7 @@ const Music = ({ open, onClose }) => {
 
                   {/* CONTROLS */}
 
-                  <div className="flex items-center gap-7">
+                  <div className="music-player-controls flex items-center gap-7">
                     {/* PREVIOUS */}
 
                     <button
@@ -724,7 +733,7 @@ const Music = ({ open, onClose }) => {
 
                   {/* EMPTY RIGHT SPACE */}
 
-                  <div className="w-[280px]" />
+                  <div className="music-player-spacer w-[280px]" />
                 </div>
               </div>
 
