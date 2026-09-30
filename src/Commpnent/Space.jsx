@@ -179,6 +179,7 @@ const Space = () => {
         {/* ================= DIVIDER ================= */}
         <div
           className="
+            dock-divider
             w-px
             min-w-px
             h-10

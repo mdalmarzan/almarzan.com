@@ -23,6 +23,7 @@ import {
   MdApi,
   MdSpeed,
 } from "react-icons/md";
+import { IoClose } from "react-icons/io5";
 
 const Skill = () => {
   const [open, setOpen] = React.useState(false);
@@ -290,6 +291,7 @@ const Skill = () => {
 
           <div
             className="
+              relative
               px-6
               md:px-10
               py-7
@@ -297,6 +299,34 @@ const Skill = () => {
               border-white/10
             "
           >
+            <button
+              type="button"
+              onClick={handleClose}
+              aria-label="Close skills"
+              className="
+                absolute
+                top-5
+                right-5
+                w-11
+                h-11
+                flex
+                items-center
+                justify-center
+                rounded-full
+                bg-white/5
+                border
+                border-white/10
+                text-white/60
+                hover:text-white
+                hover:bg-red-500/20
+                hover:border-red-400/40
+                transition-all
+                duration-300
+              "
+            >
+              <IoClose size={25} />
+            </button>
+
             <div className="flex items-center gap-3">
               <div
                 className="

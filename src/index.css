@@ -233,23 +233,25 @@ button {
   }
 
   .dock-bar {
-    height: 4.5rem;
-    max-width: calc(100vw - 1rem);
+    display: grid;
+    grid-template-columns: repeat(4, minmax(2.75rem, 1fr));
     gap: 0.25rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-    scrollbar-width: none;
-  }
-
-  .dock-bar::-webkit-scrollbar {
-    display: none;
+    width: min(18rem, calc(100vw - 1rem));
+    height: auto;
+    max-width: calc(100vw - 1rem);
+    padding: 0.5rem;
+    overflow: visible;
+    bottom: max(0.5rem, env(safe-area-inset-bottom));
+    border-radius: 1.25rem;
+    background-color: rgb(10 10 14 / 88%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
   .dock-bar > .group {
-    flex: 0 0 2.75rem;
-    width: 2.75rem;
+    width: 100%;
+    height: 2.75rem;
+    min-width: 0;
   }
 
   .dock-icon-button {
@@ -264,6 +266,10 @@ button {
     height: 2.25rem;
     min-width: 2.25rem;
     min-height: 2.25rem;
+  }
+
+  .dock-bar > .dock-divider {
+    display: none;
   }
 }
 
@@ -354,5 +360,47 @@ button {
 
   div.music-player-spacer {
     display: none;
+  }
+}
+
+@media (max-width: 1023px), (hover: none) {
+  div.portfolio-hero * {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  div.portfolio-hero .ambient-glow,
+  div.portfolio-hero .floating-dot,
+  div.portfolio-hero .image-big-glow,
+  div.portfolio-hero .image-outer-aura,
+  div.portfolio-hero .image-neon-border,
+  div.portfolio-hero .image-rgb-overlay,
+  div.portfolio-hero .image-shine-one,
+  div.portfolio-hero .image-shine-two,
+  div.portfolio-hero .image-shine-three,
+  div.portfolio-hero .image-scan-line,
+  div.portfolio-hero .image-floating-ring,
+  div.portfolio-hero .image-ground-shadow,
+  div.portfolio-hero .card-glass-shine,
+  div.portfolio-hero .card-moving-line,
+  div.portfolio-hero .card-corner-glow,
+  div.portfolio-hero .about-glow,
+  div.portfolio-hero .about-border-line,
+  div.portfolio-hero .about-top-shine,
+  div.portfolio-hero .music-background-glow,
+  div.portfolio-hero .music-secondary-glow,
+  div.portfolio-hero .music-border-line,
+  div.portfolio-hero .music-top-shine {
+    display: none;
+  }
+
+  div.portfolio-hero .portfolio-service-card,
+  div.portfolio-hero .portfolio-about-card,
+  div.portfolio-hero .portfolio-music-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 22%);
   }
 }
