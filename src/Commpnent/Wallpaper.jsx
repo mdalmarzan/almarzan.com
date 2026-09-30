@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
+
+const Box = lazy(() => import("@mui/material/Box"));
+const Modal = lazy(() => import("@mui/material/Modal"));
 
 const Wallpaper = ({ open, onClose }) => {
   // ==========================================
@@ -12,7 +13,7 @@ const Wallpaper = ({ open, onClose }) => {
     { source: "/Wallpaper/img3.mp4", id: "3", type: "video" },
     { source: "/Wallpaper/img2.mp4", id: "6", type: "video" },
     { source: "/Wallpaper/img6.mp4", id: "9", type: "video" },
-    { source: "/Wallpaper/img7.mp4", id: "9", type: "video" },
+    { source: "/Wallpaper/img7.mp4", id: "10", type: "video" },
   ];
 
   // ==========================================
@@ -229,17 +230,19 @@ const Wallpaper = ({ open, onClose }) => {
       {/* ==========================================
           WALLPAPER WINDOW
       ========================================== */}
-      <Modal
-        open={open}
-        onClose={handleClose}
-        sx={{
-          overflow: "hidden",
-          "& .MuiBackdrop-root": {
-            transition: "opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important",
-          },
-        }}
-      >
-        <Box
+      {open && (
+        <Suspense fallback={null}>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            sx={{
+              overflow: "hidden",
+              "& .MuiBackdrop-root": {
+                transition: "opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important",
+              },
+            }}
+          >
+            <Box
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseUp}
@@ -421,10 +424,11 @@ const Wallpaper = ({ open, onClose }) => {
                     {wallpaper.type === "video" ? (
                       <video
                         src={wallpaper.source}
-                        autoPlay
+                        autoPlay={Wallpaper.id === wallpaper.id}
                         muted
                         loop
                         playsInline
+                        preload={Wallpaper.id === wallpaper.id ? "metadata" : "none"}
                         className="w-full h-[170px] object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                       />
                     ) : (
@@ -487,8 +491,10 @@ const Wallpaper = ({ open, onClose }) => {
               </div>
             </div>
           )}
-        </Box>
-      </Modal>
+            </Box>
+          </Modal>
+        </Suspense>
+      )}
     </>
   );
 };

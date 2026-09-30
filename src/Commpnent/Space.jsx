@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 
-import Coffee from "../Commpnent/Coffee";
-import Music from "./Music";
+const Coffee = lazy(() => import("../Commpnent/Coffee"));
+const Music = lazy(() => import("./Music"));
 import Wallpaper from "./Wallpaper";
 
 const Space = () => {
   const [coffeeOpen, setCoffeeOpen] = useState(false);
   const [music, setMusic] = useState(false);
+  const [coffeeRequested, setCoffeeRequested] = useState(false);
+  const [musicRequested, setMusicRequested] = useState(false);
   const [wall, setWall] = useState(false);
 
   const socials = [
@@ -205,7 +207,10 @@ const Space = () => {
         >
           <button
             type="button"
-            onClick={() => setCoffeeOpen(true)}
+            onClick={() => {
+              setCoffeeRequested(true);
+              setCoffeeOpen(true);
+            }}
             className={iconButtonClass}
           >
             <img
@@ -237,7 +242,10 @@ const Space = () => {
         >
           <button
             type="button"
-            onClick={() => setMusic(true)}
+            onClick={() => {
+              setMusicRequested(true);
+              setMusic(true);
+            }}
             className={iconButtonClass}
           >
             <img
@@ -288,15 +296,22 @@ const Space = () => {
 
       {/* ================= MODALS ================= */}
 
-      <Coffee
-        open={coffeeOpen}
-        onClose={() => setCoffeeOpen(false)}
-      />
-
-      <Music
-        open={music}
-        onClose={() => setMusic(false)}
-      />
+      <Suspense fallback={null}>
+        {coffeeRequested && (
+          <Coffee
+            open={coffeeOpen}
+            onClose={() => setCoffeeOpen(false)}
+          />
+        )}
+      </Suspense>
+      <Suspense fallback={null}>
+        {musicRequested && (
+          <Music
+            open={music}
+            onClose={() => setMusic(false)}
+          />
+        )}
+      </Suspense>
 
       <Wallpaper
         open={wall}

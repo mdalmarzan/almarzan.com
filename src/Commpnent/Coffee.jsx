@@ -322,12 +322,12 @@ const Coffee = ({ open, onClose }) => {
                   <div className="coffee-video-card relative h-[350px] lg:h-[480px] rounded-[28px] overflow-hidden border border-white/15 bg-black/30 shadow-2xl video-card video-card-left group">
                     <div className="video-border-glow" />
                     <video
-                      src="/gril%201.mp4"
-                      autoPlay
+                      src={open ? "/gril%201.mp4" : undefined}
+                      autoPlay={open}
                       loop
                       muted
                       playsInline
-                      preload="auto"
+                      preload={open ? "metadata" : "none"}
                       className="absolute inset-0 w-full h-full object-cover video-img"
                     />
 
@@ -493,12 +493,12 @@ const Coffee = ({ open, onClose }) => {
                   <div className="coffee-video-card relative h-[350px] lg:h-[480px] rounded-[28px] overflow-hidden border border-white/15 bg-black/30 shadow-2xl video-card video-card-right group">
                     <div className="video-border-glow" />
                     <video
-                      src="/gril%202.mp4"
-                      autoPlay
+                      src={open ? "/gril%202.mp4" : undefined}
+                      autoPlay={open}
                       loop
                       muted
                       playsInline
-                      preload="auto"
+                      preload={open ? "metadata" : "none"}
                       className="absolute inset-0 w-full h-full object-cover video-img"
                     />
 

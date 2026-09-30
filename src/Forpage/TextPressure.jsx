@@ -35,7 +35,6 @@ const TextPressure = ({
   weight = true,
   italic = true,
   alpha = false,
-  flex = false,
   stroke = false,
   scale = false,
 
@@ -223,6 +222,10 @@ const TextPressure = ({
    */
 
   useEffect(() => {
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!finePointer || reducedMotion) return undefined;
+
     let rafId;
 
     const animate = (time) => {
@@ -259,11 +262,6 @@ const TextPressure = ({
         const titleRect =
           titleRef.current.getBoundingClientRect();
 
-        const titleCenter = {
-          x: titleRect.left + titleRect.width / 2,
-          y: titleRect.top + titleRect.height / 2,
-        };
-
         /*
          * Pressure radius.
          *
@@ -276,10 +274,13 @@ const TextPressure = ({
           180
         );
 
-        spansRef.current.forEach((span, index) => {
-          if (!span) return;
+        const spanRects = spansRef.current.map((span) =>
+          span ? span.getBoundingClientRect() : null
+        );
 
-          const rect = span.getBoundingClientRect();
+        spansRef.current.forEach((span, index) => {
+          const rect = spanRects[index];
+          if (!span || !rect) return;
 
           const charCenter = {
             x: rect.left + rect.width / 2,

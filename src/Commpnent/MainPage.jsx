@@ -1,28 +1,50 @@
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import DepthText from "../Forpage/DepthText";
 import TextPressure from "../Forpage/TextPressure";
 
 const SplashScreen = ({ onClick }) => {
   const [now, setNow] = useState(new Date());
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+  const mainRef = useRef(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setNow(new Date());
     }, 1000);
 
-    const handleMouseMove = (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 2;
-      const y = (e.clientY / window.innerHeight - 0.5) * 2;
+    const canTrackPointer = window.matchMedia(
+      "(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)"
+    ).matches;
+    let frameId = 0;
+    let pointerPosition = { x: 0, y: 0 };
 
-      setMouse({ x, y });
+    const handleMouseMove = (e) => {
+      pointerPosition = {
+        x: (e.clientX / window.innerWidth - 0.5) * 2,
+        y: (e.clientY / window.innerHeight - 0.5) * 2,
+      };
+
+      if (frameId) return;
+      frameId = requestAnimationFrame(() => {
+        frameId = 0;
+        if (!mainRef.current) return;
+        mainRef.current.style.transform = `
+          perspective(1200px)
+          rotateX(${pointerPosition.y * -1}deg)
+          rotateY(${pointerPosition.x}deg)
+        `;
+      });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    if (canTrackPointer) {
+      window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    }
 
     return () => {
       clearInterval(timer);
-      window.removeEventListener("mousemove", handleMouseMove);
+      if (frameId) cancelAnimationFrame(frameId);
+      if (canTrackPointer) {
+        window.removeEventListener("mousemove", handleMouseMove);
+      }
     };
   }, []);
 
@@ -239,6 +261,7 @@ const SplashScreen = ({ onClick }) => {
       ===================================================== */}
 
       <main
+        ref={mainRef}
         className="
           relative
           z-10
@@ -252,11 +275,7 @@ const SplashScreen = ({ onClick }) => {
           text-center
         "
         style={{
-          transform: `
-            perspective(1200px)
-            rotateX(${mouse.y * -1}deg)
-            rotateY(${mouse.x}deg)
-          `,
+          transform: "perspective(1200px) rotateX(0deg) rotateY(0deg)",
           transition: "transform 0.18s ease-out",
         }}
       >

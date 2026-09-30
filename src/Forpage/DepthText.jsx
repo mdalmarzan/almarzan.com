@@ -64,6 +64,7 @@ const DepthText = ({
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     const canTrackPointer = pointerTracking && finePointer && !reducedMotion;
+    const canOrbit = autoOrbit && finePointer && !reducedMotion;
 
     let frameId = 0;
     let activePointer = false;
@@ -75,7 +76,7 @@ const DepthText = ({
       stage.style.transform = getTransform(current.x, current.y);
     };
 
-    if (reducedMotion) {
+    if (reducedMotion || (!canTrackPointer && !canOrbit)) {
       stage.style.transform = getTransform(baseRotation.x, baseRotation.y);
       return undefined;
     }
@@ -105,7 +106,7 @@ const DepthText = ({
     }
 
     const tick = now => {
-      if ((!canTrackPointer || !activePointer) && autoOrbit) {
+      if ((!canTrackPointer || !activePointer) && canOrbit) {
         const elapsed = (now - startTime) / 1000;
         const orbit = elapsed * safeOrbitSpeed * Math.PI * 2;
         const fallbackAmount = canTrackPointer ? 0.18 : 0.55;

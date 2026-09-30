@@ -8,15 +8,13 @@ import {
 import { TbPlayerPauseFilled } from "react-icons/tb";
 
 const Hero = () => {
-  const audioRef = useRef(
-    new Audio(
-      "/কিছু মানুষ মরে যায় পঁচিশে - Kichhu Manush More Jaay Pochishe - Saif Zohan - Bangla New Song 2025.mp3"
-    )
-  );
+  const audioRef = useRef(null);
 
   const [isPlaying, setIsPlaying] = useState(false);
 
   const toggleMusic = () => {
+    if (!audioRef.current) return;
+
     if (isPlaying) {
       audioRef.current.pause();
       setIsPlaying(false);
@@ -25,13 +23,18 @@ const Hero = () => {
         .play()
         .then(() => setIsPlaying(true))
         .catch((error) => {
-          console.log("Audio error:", error);
+          if (error.name === "AbortError") return;
+          console.error("Audio error:", error);
         });
     }
   };
 
   useEffect(() => {
-    const audio = audioRef.current;
+    const audio = new Audio();
+    audio.preload = "none";
+    audio.src =
+      "/কিছু মানুষ মরে যায় পঁচিশে - Kichhu Manush More Jaay Pochishe - Saif Zohan - Bangla New Song 2025.mp3";
+    audioRef.current = audio;
 
     const handleEnded = () => {
       setIsPlaying(false);
@@ -42,6 +45,7 @@ const Hero = () => {
     return () => {
       audio.pause();
       audio.removeEventListener("ended", handleEnded);
+      audioRef.current = null;
     };
   }, []);
 
@@ -124,7 +128,7 @@ const Hero = () => {
             <img
               src="/marzan2.png"
               loading="eager"
-              fetchpriority="high"
+              fetchPriority="high"
               alt="Marzan"
               width={200}
               height={290}

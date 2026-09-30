@@ -206,15 +206,7 @@ const Music = ({ open, onClose }) => {
   // ==============================
 
   const togglePlay = () => {
-    if (!audioRef.current) return;
-
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play().catch((error) => {
-        console.log("Audio error:", error);
-      });
-    }
+    setIsPlaying((playing) => !playing);
   };
 
   // ==============================
@@ -272,6 +264,7 @@ const Music = ({ open, onClose }) => {
 
     if (isPlaying) {
       audio.play().catch((error) => {
+        if (error.name === "AbortError") return;
         setIsPlaying(false);
         console.error("Audio play error:", error);
       });
@@ -741,7 +734,8 @@ const Music = ({ open, onClose }) => {
 
               <audio
                 ref={audioRef}
-                src={currentSong.file}
+                src={open ? currentSong.file : undefined}
+                preload="none"
                 onLoadedMetadata={handleLoadedMetadata}
                 onTimeUpdate={handleTimeUpdate}
                 onPlay={() => setIsPlaying(true)}
