@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaCode, FaPlay } from "react-icons/fa6";
 import { MdDesignServices } from "react-icons/md";
 import {
@@ -46,7 +46,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative bg-transparent text-white mt-3 ml-10">
+    <div className="portfolio-hero relative bg-transparent text-white mt-3 ml-10">
 
       {/* =====================================================
           AMBIENT BACKGROUND
@@ -76,7 +76,7 @@ const Hero = () => {
           TOP SECTION
       ====================================================== */}
 
-      <div className="relative flex gap-6">
+      <div className="portfolio-hero-top relative flex gap-6">
 
         {/* =================================================
             PROFILE IMAGE
@@ -184,6 +184,7 @@ const Hero = () => {
           className="
             relative
             overflow-hidden
+            portfolio-service-card
             w-[250px]
             h-[290px]
             p-4
@@ -293,6 +294,7 @@ const Hero = () => {
           rounded-2xl
           text-white
           mt-3
+          portfolio-about-card
           w-[476px]
           h-[290px]
           p-4
@@ -385,6 +387,7 @@ const Hero = () => {
           rounded-2xl
           text-white
           mt-3
+          portfolio-music-card
           w-[476px]
           h-[175px]
           p-4
@@ -431,6 +434,7 @@ const Hero = () => {
             border
             border-white/[0.18]
             rounded-full
+            portfolio-album
             w-[125px]
             h-[125px]
             p-2
@@ -489,7 +493,7 @@ const Hero = () => {
             MUSIC INFO
         ================================================== */}
 
-        <div className="relative flex flex-col items-center justify-center flex-1 ml-5">
+        <div className="portfolio-music-info relative flex flex-col items-center justify-center flex-1 ml-5">
 
           <h4
             className="
@@ -504,7 +508,7 @@ const Hero = () => {
           </h4>
 
           {/* CONTROLS */}
-          <div className="flex items-center gap-8">
+          <div className="portfolio-music-controls flex items-center gap-8">
 
             {/* Previous */}
             <button

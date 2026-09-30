@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 
@@ -100,6 +100,7 @@ const Coffee = ({ open, onClose }) => {
       }}
     >
       <Box
+        className="coffee-window"
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
@@ -267,7 +268,7 @@ const Coffee = ({ open, onClose }) => {
         ====================================================== */}
 
         {!minimized && (
-          <div className="relative h-[calc(100%-62px)] overflow-hidden">
+          <div className="coffee-content relative h-[calc(100%-62px)] overflow-hidden">
             {/* =================================================
                 BACKGROUND GLOW
             ================================================= */}
@@ -292,7 +293,7 @@ const Coffee = ({ open, onClose }) => {
                 CONTENT WRAPPER
             ================================================= */}
 
-            <div className="relative z-10 h-full flex flex-col items-center justify-between px-8 py-7">
+            <div className="coffee-content-wrapper relative z-10 h-full flex flex-col items-center justify-between px-8 py-7">
               {/* TOP BADGE */}
 
               <div className="badge-enter flex items-center gap-3 px-5 py-2 rounded-full bg-black/20 border border-white/10 backdrop-blur-xl relative overflow-hidden">
@@ -312,13 +313,13 @@ const Coffee = ({ open, onClose }) => {
                   THREE COLUMN AREA
               ================================================= */}
 
-              <div className="w-full flex-1 flex items-center justify-center">
+              <div className="coffee-main-area w-full flex-1 flex items-center justify-center">
                 <div className="w-full max-w-[1200px] grid grid-cols-1 lg:grid-cols-[260px_1fr_260px] gap-6 items-center">
                   {/* =================================================
                       LEFT VIDEO
                   ================================================= */}
 
-                  <div className="relative h-[350px] lg:h-[480px] rounded-[28px] overflow-hidden border border-white/15 bg-black/30 shadow-2xl video-card video-card-left group">
+                  <div className="coffee-video-card relative h-[350px] lg:h-[480px] rounded-[28px] overflow-hidden border border-white/15 bg-black/30 shadow-2xl video-card video-card-left group">
                     <div className="video-border-glow" />
                     <video
                       src="/gril%201.mp4"
@@ -349,7 +350,7 @@ const Coffee = ({ open, onClose }) => {
                   ================================================= */}
 
                   <div className="flex justify-center">
-                    <div className="w-full max-w-[600px] rounded-[35px] border border-white/15 bg-black/25 backdrop-blur-2xl p-7 md:p-9 shadow-2xl main-card relative overflow-hidden">
+                    <div className="coffee-main-card w-full max-w-[600px] rounded-[35px] border border-white/15 bg-black/25 backdrop-blur-2xl p-7 md:p-9 shadow-2xl main-card relative overflow-hidden">
                       {/* Card ambient lights */}
                       <div className="card-glow card-glow-1" />
                       <div className="card-glow card-glow-2" />
@@ -489,7 +490,7 @@ const Coffee = ({ open, onClose }) => {
                       RIGHT VIDEO
                   ================================================= */}
 
-                  <div className="relative h-[350px] lg:h-[480px] rounded-[28px] overflow-hidden border border-white/15 bg-black/30 shadow-2xl video-card video-card-right group">
+                  <div className="coffee-video-card relative h-[350px] lg:h-[480px] rounded-[28px] overflow-hidden border border-white/15 bg-black/30 shadow-2xl video-card video-card-right group">
                     <div className="video-border-glow" />
                     <video
                       src="/gril%202.mp4"
