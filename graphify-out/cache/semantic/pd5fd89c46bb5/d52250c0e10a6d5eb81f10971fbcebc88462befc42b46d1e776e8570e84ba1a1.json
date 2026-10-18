@@ -1,0 +1,1 @@
+{"nodes": [{"id": "index", "label": "almarzan.com index page", "file_type": "code", "source_file": "index.html"}], "edges": [{"source": "index", "target": "public_icons8_m_64", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "index.html", "source_location": null, "weight": 1.0}], "hyperedges": []}

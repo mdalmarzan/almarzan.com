@@ -1,0 +1,302 @@
+{
+  ".claude/settings.json": {
+    "mtime": 1792336441.97221,
+    "seen": 1792338053.1690543,
+    "ast_hash": "d87ddf911f2e20f4645b9c0d33ff7ba9",
+    "semantic_hash": "d87ddf911f2e20f4645b9c0d33ff7ba9"
+  },
+  "eslint.config.js": {
+    "mtime": 1792336325.3515427,
+    "seen": 1792338053.1690598,
+    "ast_hash": "fa91453358b56681481f75f81d1bfccd",
+    "semantic_hash": "fa91453358b56681481f75f81d1bfccd"
+  },
+  "package.json": {
+    "mtime": 1792336325.3515427,
+    "seen": 1792338053.1690624,
+    "ast_hash": "e6b0dd635a0a5f23bc71eac737ffcc7b",
+    "semantic_hash": "e6b0dd635a0a5f23bc71eac737ffcc7b"
+  },
+  "src/App.jsx": {
+    "mtime": 1792336326.0484765,
+    "seen": 1792338053.1690633,
+    "ast_hash": "a8964858ab9001e18d38baff88ea66d8",
+    "semantic_hash": "a8964858ab9001e18d38baff88ea66d8"
+  },
+  "src/Commpnent/About.jsx": {
+    "mtime": 1792336326.0484765,
+    "seen": 1792338053.1690648,
+    "ast_hash": "fc693c763d39c18ff3c25aaa6c86fd8d",
+    "semantic_hash": "fc693c763d39c18ff3c25aaa6c86fd8d"
+  },
+  "src/Commpnent/Clock.jsx": {
+    "mtime": 1792336326.0484765,
+    "seen": 1792338053.1690657,
+    "ast_hash": "9772308ae7c79df59cb28ce3b0cdfdd9",
+    "semantic_hash": "9772308ae7c79df59cb28ce3b0cdfdd9"
+  },
+  "src/Commpnent/Coffee.jsx": {
+    "mtime": 1792336326.0484765,
+    "seen": 1792338053.1690667,
+    "ast_hash": "696cea53d3a26c91f13865ea34f48286",
+    "semantic_hash": "696cea53d3a26c91f13865ea34f48286"
+  },
+  "src/Commpnent/Contact.jsx": {
+    "mtime": 1792336326.0484765,
+    "seen": 1792338053.1690679,
+    "ast_hash": "53125ae37c94cf05ca3c5dc55ec808c9",
+    "semantic_hash": "53125ae37c94cf05ca3c5dc55ec808c9"
+  },
+  "src/Commpnent/Experience.jsx": {
+    "mtime": 1792336326.0484765,
+    "seen": 1792338053.1690688,
+    "ast_hash": "deb2e34eb535d8dfa11b682d4ec09920",
+    "semantic_hash": "deb2e34eb535d8dfa11b682d4ec09920"
+  },
+  "src/Commpnent/Footer.jsx": {
+    "mtime": 1792336326.0588944,
+    "seen": 1792338053.1690695,
+    "ast_hash": "ae243994dc7630eeb5fa9bdca2bf7a32",
+    "semantic_hash": "ae243994dc7630eeb5fa9bdca2bf7a32"
+  },
+  "src/Commpnent/FullScreen.jsx": {
+    "mtime": 1792336326.0642555,
+    "seen": 1792338053.1690705,
+    "ast_hash": "cd18bb096a9ba342361c7f52fc8d408c",
+    "semantic_hash": "cd18bb096a9ba342361c7f52fc8d408c"
+  },
+  "src/Commpnent/Hero.jsx": {
+    "mtime": 1792336326.0642555,
+    "seen": 1792338053.1690717,
+    "ast_hash": "c0d86543f8ba8e67579d4b8889057a1d",
+    "semantic_hash": "c0d86543f8ba8e67579d4b8889057a1d"
+  },
+  "src/Commpnent/MainPage.jsx": {
+    "mtime": 1792336326.0642555,
+    "seen": 1792338053.1690726,
+    "ast_hash": "1c382aa31464ec35513a69a6694ca099",
+    "semantic_hash": "1c382aa31464ec35513a69a6694ca099"
+  },
+  "src/Commpnent/Music.jsx": {
+    "mtime": 1792336326.0642555,
+    "seen": 1792338053.1690733,
+    "ast_hash": "a61110925c00fded7f47431456aca317",
+    "semantic_hash": "a61110925c00fded7f47431456aca317"
+  },
+  "src/Commpnent/Resume.jsx": {
+    "mtime": 1792336326.0642555,
+    "seen": 1792338053.169074,
+    "ast_hash": "9a53b07344604b834aab365a5d5cb08e",
+    "semantic_hash": "9a53b07344604b834aab365a5d5cb08e"
+  },
+  "src/Commpnent/Skill.jsx": {
+    "mtime": 1792336326.0642555,
+    "seen": 1792338053.1690753,
+    "ast_hash": "66f22de2b0cb2a84b1d4a739a223b94f",
+    "semantic_hash": "66f22de2b0cb2a84b1d4a739a223b94f"
+  },
+  "src/Commpnent/Space.jsx": {
+    "mtime": 1792336326.0642555,
+    "seen": 1792338053.169076,
+    "ast_hash": "c24ec4398903fd745deb8600097e05e5",
+    "semantic_hash": "c24ec4398903fd745deb8600097e05e5"
+  },
+  "src/Commpnent/Wallpaper.jsx": {
+    "mtime": 1792336326.0809362,
+    "seen": 1792338053.169077,
+    "ast_hash": "89b715ee7ece188af9452745ee31a470",
+    "semantic_hash": "89b715ee7ece188af9452745ee31a470"
+  },
+  "src/CursorGrid.jsx": {
+    "mtime": 1792336326.0809362,
+    "seen": 1792338053.1690779,
+    "ast_hash": "78a4f389d78f9cd017cf689f7954a223",
+    "semantic_hash": "78a4f389d78f9cd017cf689f7954a223"
+  },
+  "src/Forpage/DepthText.jsx": {
+    "mtime": 1792336326.0809362,
+    "seen": 1792338053.1690788,
+    "ast_hash": "c52794816bf45450fef34acd97ac53cc",
+    "semantic_hash": "c52794816bf45450fef34acd97ac53cc"
+  },
+  "src/Forpage/TextPressure.jsx": {
+    "mtime": 1792336326.0809362,
+    "seen": 1792338053.1690795,
+    "ast_hash": "1dcd300a7aa4a925e41bae67652f3a5a",
+    "semantic_hash": "1dcd300a7aa4a925e41bae67652f3a5a"
+  },
+  "src/Navber/Navber.jsx": {
+    "mtime": 1792336326.0809362,
+    "seen": 1792338053.1690805,
+    "ast_hash": "91654cc80736b3116689f3d4c6389604",
+    "semantic_hash": "91654cc80736b3116689f3d4c6389604"
+  },
+  "src/main.jsx": {
+    "mtime": 1792336326.0809362,
+    "seen": 1792338053.1690817,
+    "ast_hash": "51fd21c378330142b61bf8d1ef3795ef",
+    "semantic_hash": "51fd21c378330142b61bf8d1ef3795ef"
+  },
+  "vite.config.js": {
+    "mtime": 1792336326.0809362,
+    "seen": 1792338053.1690826,
+    "ast_hash": "21f211fbf0bd5d8016f7d3d56b228a8a",
+    "semantic_hash": "21f211fbf0bd5d8016f7d3d56b228a8a"
+  },
+  "README.md": {
+    "mtime": 1792336325.3515427,
+    "seen": 1792338053.1690834,
+    "ast_hash": "d4ecbaedd529cb52644d395f3cc91158",
+    "semantic_hash": "d4ecbaedd529cb52644d395f3cc91158"
+  },
+  "index.html": {
+    "mtime": 1792336325.3515427,
+    "seen": 1792338053.1690843,
+    "ast_hash": "cf03640ff542c25d3ecc384ef4f94dbd",
+    "semantic_hash": "cf03640ff542c25d3ecc384ef4f94dbd"
+  },
+  "public/icons8-m-64.png": {
+    "mtime": 1792336326.006085,
+    "seen": 1792338053.1690855,
+    "ast_hash": "340bd6701ea958a32f6cfd9e23a78a37",
+    "semantic_hash": "340bd6701ea958a32f6cfd9e23a78a37"
+  },
+  "public/Allmusic/50 Cent - In Da Club (Official Music Video).mp3": {
+    "mtime": 1792336325.3852777,
+    "seen": 1792338053.1690862,
+    "ast_hash": "d50902c49cd2322acce7b980d2416e9e",
+    "semantic_hash": "d50902c49cd2322acce7b980d2416e9e"
+  },
+  "public/Allmusic/Coolio - Gangsta's Paradise (feat. L.V.) [Official Music Video].mp3": {
+    "mtime": 1792336325.4298413,
+    "seen": 1792338053.169087,
+    "ast_hash": "9c77176406d227c9fb149a7da6a93412",
+    "semantic_hash": "9c77176406d227c9fb149a7da6a93412"
+  },
+  "public/Allmusic/Imagine Dragons - Believer (Official Music Video).mp3": {
+    "mtime": 1792336325.4690118,
+    "seen": 1792338053.169088,
+    "ast_hash": "1504771c6d1e1dc1bd57856035d529eb",
+    "semantic_hash": "1504771c6d1e1dc1bd57856035d529eb"
+  },
+  "public/Allmusic/KALEO - Way Down We Go (Official Music Video).mp3": {
+    "mtime": 1792336325.4935913,
+    "seen": 1792338053.169089,
+    "ast_hash": "e6e65c417931c26d068b9900248c5e44",
+    "semantic_hash": "e6e65c417931c26d068b9900248c5e44"
+  },
+  "public/Allmusic/Purnota \uff5c\uff5c \u09aa\u09c2\u09b0\u09cd\u09a3\u09a4\u09be \uff5c\uff5c Warfaze \uff5c\uff5cAlbum\uff1a Shotto..mp3": {
+    "mtime": 1792336325.5598686,
+    "seen": 1792338053.1690943,
+    "ast_hash": "e2f8f3b0b11b4393883848d88745aab8",
+    "semantic_hash": "e2f8f3b0b11b4393883848d88745aab8"
+  },
+  "public/Allmusic/Shironamhin \uff5c Ei Obelay \uff5c Official Music Video.mp3": {
+    "mtime": 1792336325.6053376,
+    "seen": 1792338053.1690958,
+    "ast_hash": "73f9c2bc5e1355f4093ebb701c3b4605",
+    "semantic_hash": "73f9c2bc5e1355f4093ebb701c3b4605"
+  },
+  "public/Allmusic/Tame Impala - The Less I Know The Better (Audio).mp3": {
+    "mtime": 1792336325.6522067,
+    "seen": 1792338053.1690967,
+    "ast_hash": "3a10d255f7a1dfda709e8175f10114a0",
+    "semantic_hash": "3a10d255f7a1dfda709e8175f10114a0"
+  },
+  "public/Allmusic/The Weeknd - After Hours (Audio).mp3": {
+    "mtime": 1792336325.7001266,
+    "seen": 1792338053.1690977,
+    "ast_hash": "42573ec561e46f4f6a095799060dc9ef",
+    "semantic_hash": "42573ec561e46f4f6a095799060dc9ef"
+  },
+  "public/Allmusic/songfix.mp3": {
+    "mtime": 1792336325.7337346,
+    "seen": 1792338053.1690984,
+    "ast_hash": "d3d8183df56e275f9db542382dd83a69",
+    "semantic_hash": "d3d8183df56e275f9db542382dd83a69"
+  },
+  "public/Allmusic/\u09a4\u09c1\u09ae\u09bf \u098f\u09a4 \u09b8\u09b9\u099c\u09c7 \u09ad\u09c1\u09b2\u09a4\u09c7 \u09aa\u09be\u09b0\u09cb \uff5c\uff5c Tumi Eto Sohoje Vulte Paro \uff5c\uff5c Obosthan \uff5c\uff5c Lyrics \u29f8 Bangla Song \u29f8 SA Music.mp3": {
+    "mtime": 1792336325.7828493,
+    "seen": 1792338053.1691048,
+    "ast_hash": "ac72dc786319f7e7f61be42f4962457d",
+    "semantic_hash": "ac72dc786319f7e7f61be42f4962457d"
+  },
+  "public/Allmusic/\uff02 \u0986\u09ae\u09be\u09b0 \u09a6\u09c7\u09b9\u0996\u09be\u09a8 \uff02 \uff5c  Amar Dehokhan \uff5c Odd Signature \uff5c Lyrics Video.mp3": {
+    "mtime": 1792336325.826238,
+    "seen": 1792338053.1691086,
+    "ast_hash": "4a5daa7d4efc65ccf7e8a26c36c72a92",
+    "semantic_hash": "4a5daa7d4efc65ccf7e8a26c36c72a92"
+  },
+  "public/Allmusic/\ud835\udc7a\ud835\udc95\ud835\udc86\ud835\udc93\ud835\udc86\ud835\udc90 \ud835\udc8d\ud835\udc90\ud835\udc97\ud835\udc86.mp3": {
+    "mtime": 1792336325.8738358,
+    "seen": 1792338053.16911,
+    "ast_hash": "96dda65d65f6608c7b995dce5abf7511",
+    "semantic_hash": "96dda65d65f6608c7b995dce5abf7511"
+  },
+  "public/Wallpaper/img10.mp4": {
+    "mtime": 1792336325.9376557,
+    "seen": 1792338053.1691108,
+    "ast_hash": "fd22a841f7bf672ff640b7c1752a5d46",
+    "semantic_hash": "fd22a841f7bf672ff640b7c1752a5d46"
+  },
+  "public/Wallpaper/img2.mp4": {
+    "mtime": 1792336325.9376557,
+    "seen": 1792338053.1691122,
+    "ast_hash": "00c2c7818eb2efdda10efeb6b0231f2d",
+    "semantic_hash": "00c2c7818eb2efdda10efeb6b0231f2d"
+  },
+  "public/Wallpaper/img3.mp4": {
+    "mtime": 1792336325.9858265,
+    "seen": 1792338053.1691132,
+    "ast_hash": "309df20396f735e459aed58c7ca00d45",
+    "semantic_hash": "309df20396f735e459aed58c7ca00d45"
+  },
+  "public/Wallpaper/img6.mp4": {
+    "mtime": 1792336325.992587,
+    "seen": 1792338053.169114,
+    "ast_hash": "a144b6c2afc78d0399ab8432480ba942",
+    "semantic_hash": "a144b6c2afc78d0399ab8432480ba942"
+  },
+  "public/Wallpaper/img7.mp4": {
+    "mtime": 1792336325.996596,
+    "seen": 1792338053.1691153,
+    "ast_hash": "4320da9a723f706d5b05e7db6c06ca05",
+    "semantic_hash": "4320da9a723f706d5b05e7db6c06ca05"
+  },
+  "public/gril 1.mp4": {
+    "mtime": 1792336326.000893,
+    "seen": 1792338053.1691165,
+    "ast_hash": "24a92aedd434b12d4d581b37667cad42",
+    "semantic_hash": "24a92aedd434b12d4d581b37667cad42"
+  },
+  "public/gril 2.mp4": {
+    "mtime": 1792336326.000893,
+    "seen": 1792338053.1691172,
+    "ast_hash": "817f14643f1a4f123b2c7d49fb0d04d8",
+    "semantic_hash": "817f14643f1a4f123b2c7d49fb0d04d8"
+  },
+  "public/Untitled design.png": {
+    "mtime": 1792336325.8769407,
+    "seen": 1792338710.4891782,
+    "ast_hash": "31f3fc359d2815dbf29f7f22acbb1f15",
+    "semantic_hash": "31f3fc359d2815dbf29f7f22acbb1f15"
+  },
+  "public/Wallpaper/marzan.png": {
+    "mtime": 1792336325.996596,
+    "seen": 1792338710.4891803,
+    "ast_hash": "43de957008c52650202caeea18784624",
+    "semantic_hash": "43de957008c52650202caeea18784624"
+  },
+  "public/download.jpg": {
+    "mtime": 1792336325.9986005,
+    "seen": 1792338710.4891813,
+    "ast_hash": "7ad3e229b3bfd5ca9f85d8fd3f160d19",
+    "semantic_hash": "7ad3e229b3bfd5ca9f85d8fd3f160d19"
+  },
+  "public/\u0995\u09bf\u099b\u09c1 \u09ae\u09be\u09a8\u09c1\u09b7 \u09ae\u09b0\u09c7 \u09af\u09be\u09af\u09bc \u09aa\u0981\u099a\u09bf\u09b6\u09c7 - Kichhu Manush More Jaay Pochishe - Saif Zohan - Bangla New Song 2025.mp3": {
+    "mtime": 1792336326.0484765,
+    "seen": 1792338053.1691213,
+    "ast_hash": "35602622f87341a41071c78a8b65f71b",
+    "semantic_hash": "35602622f87341a41071c78a8b65f71b"
+  }
+}
